@@ -1,10 +1,8 @@
-import tkinter as tk
-from func_tkinter.setup_gui import setup_gui
+from googletrans import Translator
+from func_tkinter.window import window_create
 
-def main():
-    root = tk.Tk()
-    setup_gui(root)
-    root.mainloop()
+def start_app():
+    window_create()
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__start__":
+    start_app()
