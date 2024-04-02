@@ -1,5 +1,5 @@
-from googletrans import Translator
-from func_tkinter.window import window_create
+from func_tkinter.my_window import window_create
+from func_translate.translate import translate
 
 def start_app():
     window_create()
