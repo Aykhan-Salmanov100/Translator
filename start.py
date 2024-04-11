@@ -32,6 +32,13 @@ def main():
     output_text = tk.Text(output_frame, height=5, width=50)
     output_text.grid(row=0, column=1)
 
+    # Buttons
+    button_frame = tk.Frame(root)
+    button_frame.pack(pady=10)
+
+    translate_button = tk.Button(button_frame, text="Translate", command=translate)
+    translate_button.grid(row=0, column=0, padx=10)
+
     root.mainloop()
 
 if __name__ == "__main__":
