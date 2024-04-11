@@ -1,8 +1,24 @@
-from func_tkinter.my_window import window_create
-from func_translate.translate import translate
+import tkinter as tk
 
-def start_app():
-    window_create()
+def main():
+    root = tk.Tk()
+    root.title("Translator App")
 
-if __name__ == "__start__":
-    start_app()
+    # Input Frame
+    input_frame = tk.Frame(root)
+    input_frame.pack(pady=10)
+
+    input_label = tk.Label(input_frame, text="Enter text:")
+    input_label.grid(row=0, column=0)
+
+    language_label = tk.Label(input_frame, text="Target Language:")
+    language_label.grid(row=1, column=0)
+
+    global language_entry
+    language_entry = tk.Entry(input_frame)
+    language_entry.grid(row=1, column=1)
+
+    root.mainloop()
+
+if __name__ == "__main__":
+    main()
