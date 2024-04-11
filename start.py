@@ -21,6 +21,17 @@ def main():
     language_entry = tk.Entry(input_frame)
     language_entry.grid(row=1, column=1)
 
+    # Output Frame
+    output_frame = tk.Frame(root)
+    output_frame.pack(pady=10)
+
+    output_label = tk.Label(output_frame, text="Translated text:")
+    output_label.grid(row=0, column=0)
+
+    global output_text
+    output_text = tk.Text(output_frame, height=5, width=50)
+    output_text.grid(row=0, column=1)
+
     root.mainloop()
 
 if __name__ == "__main__":
