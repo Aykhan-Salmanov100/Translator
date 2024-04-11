@@ -1,4 +1,5 @@
 import tkinter as tk
+from turtle import clear
 
 def main():
     root = tk.Tk()
@@ -41,6 +42,9 @@ def main():
 
     clear_button = tk.Button(button_frame, text="Clear", command=clear)
     clear_button.grid(row=0, column=1, padx=10)
+
+    save_button = tk.Button(button_frame, text="Save to File", command=save_to_file)
+    save_button.grid(row=0, column=2, padx=10)
 
     root.mainloop()
 
