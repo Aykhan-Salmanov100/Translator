@@ -39,6 +39,9 @@ def main():
     translate_button = tk.Button(button_frame, text="Translate", command=translate)
     translate_button.grid(row=0, column=0, padx=10)
 
+    clear_button = tk.Button(button_frame, text="Clear", command=clear)
+    clear_button.grid(row=0, column=1, padx=10)
+
     root.mainloop()
 
 if __name__ == "__main__":
