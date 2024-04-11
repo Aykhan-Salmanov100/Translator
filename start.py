@@ -46,6 +46,13 @@ def main():
     save_button = tk.Button(button_frame, text="Save to File", command=save_to_file)
     save_button.grid(row=0, column=2, padx=10)
 
+    file_label = tk.Label(button_frame, text="File Name:")
+    file_label.grid(row=1, column=0)
+
+    global file_entry
+    file_entry = tk.Entry(button_frame)
+    file_entry.grid(row=1, column=1, columnspan=2)
+
     root.mainloop()
 
 if __name__ == "__main__":
