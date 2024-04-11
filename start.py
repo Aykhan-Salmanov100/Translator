@@ -11,6 +11,9 @@ def main():
     input_label = tk.Label(input_frame, text="Enter text:")
     input_label.grid(row=0, column=0)
 
+    global input_text
+    input_text = create_input_text_widget(input_frame)
+
     language_label = tk.Label(input_frame, text="Target Language:")
     language_label.grid(row=1, column=0)
 
