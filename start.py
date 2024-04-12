@@ -1,5 +1,5 @@
 import tkinter as tk
-from gui.gui_elements import setup_gui
+from func_tkinter.gui_elements import setup_gui
 
 def main():
     root = tk.Tk()
