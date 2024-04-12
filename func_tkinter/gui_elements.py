@@ -1,15 +1,13 @@
 import tkinter as tk
+from functions.clear_input_output import clear_input_output
+from func_tkinter.gui_elements import create_input_text_widget
+from func_translate.translation_function import translate_text
+from func_translate.save_to_file import save_to_file
 
 def create_input_text_widget(parent):
     input_text = tk.Text(parent, height=5, width=50)
     input_text.grid(row=0, column=1)
     return input_text
-
-import tkinter as tk
-from functions.clear_input_output import clear_input_output
-from gui.gui_elements import create_input_text_widget
-from func_translate.translation_function import translate_text
-from functions.file_function import save_to_file
 
 def setup_gui(root):
     root.title("Translator App")
