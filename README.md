@@ -1,4 +1,10 @@
 # Translator App
+## Aykhan Salmanov
+## P438401
+## IY499
+## Library
+
+pip install googletrans==4.0.0-rc1
 
 ## Description
 This is a simple translator application built using Python and Tkinter. It allows users to enter text, select a target language, and translate the text into the chosen language. Additionally, users can save the translated text to a file.
