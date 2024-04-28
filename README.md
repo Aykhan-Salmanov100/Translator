@@ -65,6 +65,3 @@ This app helps you translate text from one language to another. It's easy to use
 - You can swap between the source and target languages by clicking the "⇄" button.
 - Translation history is saved locally on your computer.
 
----
-
-**Note:** If you encounter any issues or have suggestions for improvement, feel free to reach out to us! Happy translating! 🌍✨

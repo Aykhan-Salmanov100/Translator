@@ -6,7 +6,9 @@ language swapping, translation history saving and viewing, and input/output clea
 """
 
 import tkinter as tk
+from clear import clear_input_output
 from googletrans import LANGUAGES, Translator
+from swap import swap_languages
 from tkinter import messagebox
 import os
 
@@ -35,17 +37,11 @@ def on_select(event):
         language_entry.insert(tk.END, selected_language)
         target_language_var.set(selected_language)
 
-# Function to swap translation languages
-def swap_languages():
-    """
-    This function swaps the source and target languages by exchanging their values
-    in the respective StringVars.
-    """
-    source_lang = source_language_var.get()
-    target_lang = target_language_var.get()
-    source_language_var.set(target_lang)
-    target_language_var.set(source_lang)
-    update_autocomplete(None)
+def swap():
+    swap_languages(source_language_var, target_language_var, update_autocomplete)
+
+def clear():
+    clear_input_output(input_text_widget, output_text_widget)
 
 # Function to create language entry with autocomplete
 def create_language_entry(parent):
@@ -66,7 +62,7 @@ def create_language_entry(parent):
     source_language_dropdown = tk.OptionMenu(language_frame, source_language_var, *LANGUAGES.values())
     source_language_dropdown.grid(row=0, column=1)
 
-    swap_button = tk.Button(language_frame, text="⇄", command=swap_languages)
+    swap_button = tk.Button(language_frame, text="⇄", command=swap)
     swap_button.grid(row=0, column=2)
 
     target_language_label = tk.Label(language_frame, text="Target Language:")
@@ -162,14 +158,6 @@ def show_history():
     except Exception as e:
         messagebox.showerror("Error", f"Failed to load translation history: {str(e)}")
 
-# Function to clear input and output
-def clear_input_output():
-    """
-    This function clears the text in both the input and output text widgets.
-    """
-    input_text_widget.delete("1.0", "end")
-    output_text_widget.delete("1.0", "end")
-
 # Create the main window
 root = tk.Tk()
 root.title("My Translator App")
@@ -190,7 +178,7 @@ create_language_entry(root)
 translate_button = tk.Button(root, text="Translate", command=translate)
 translate_button.grid(row=2, column=0, padx=10, pady=10)
 
-clear_button = tk.Button(root, text="Clear", command=clear_input_output)
+clear_button = tk.Button(root, text="Clear", command=clear)
 clear_button.grid(row=2, column=1, padx=10, pady=10)
 
 username_label = tk.Label(root, text="Enter your username:")

@@ -1,0 +1,5 @@
+Source Language: English
+Target Language: amharic
+Input Text: 
+Translated Text: 
+
