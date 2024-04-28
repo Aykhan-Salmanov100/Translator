@@ -9,6 +9,7 @@ from func_tkinter.save_button import create_save_button
 from func_tkinter.translate_button import create_translate_button
 from func_tkinter.language_entry import create_language_entry
 
+import tkinter as tk
 def setup_gui(root):
     root.title("Translator App")
     
@@ -20,6 +21,10 @@ def setup_gui(root):
     language_entry = create_language_entry(input_frame)
     output_text = create_output_text(output_frame)
 
+    # Directly create and assign the file entry widget
+    file_entry = tk.Entry(button_frame)
+    file_entry.grid(row=0, column=3, padx=10)  # Adjust the grid position as needed
+
     create_translate_button(button_frame, input_text, language_entry, output_text)
     create_clear_button(button_frame, input_text, output_text)
-    create_save_button(button_frame, output_text)
+    create_save_button(button_frame, output_text, file_entry)  # Pass 'file_entry' as an argument
